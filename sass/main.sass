@@ -1,0 +1,419 @@
+.margin-general
+	padding: 0
+	margin: 0 auto
+
+.page-width	
+	max-width: 1200px
+	width: 100%
+
+.font-style
+	text-transform: capitalize
+	text-align: center
+
+.hover-style
+	&:hover,
+	&:focus
+		color: opacity
+
+.fa-style
+	height: 30px
+	width: 30px
+	
+@for $i from 1 through 12
+	.col-#{$i}
+		width: 100%/ 12*$i
+
+@for $i from 1 through 11
+	.col-offset-#{$i}
+		margin-left: 100%/ 11*$i
+
+$white: #fff
+
+$black: #000
+
+$blue: #0000ff
+
+$light-blue: #4099FF
+
+$grey-blue: #3B5998
+
+$red-orange: #DB5A3C
+
+$brown-red: #5C3D2E
+
+$shade-blue: #4183C4
+
+$darker-shade: #313234
+
+
+.row:before,
+.row:after 
+	content: "" 
+	display: table 
+	clear: both	
+
+header
+	height: 50px
+	background-color: rgba(0,0,0, 0.5)
+	
+	nav
+		
+		&.container 
+			@extend .page-width
+			margin: 0 auto
+			
+		img 
+			padding: 10px 0
+
+		ul 
+			@extend .margin-general
+			float: right
+			list-style-type: none
+
+			li
+				display: inline-block
+
+				a 
+					line-height: 50px
+					display: block
+					color: $white
+					padding: 0 20px
+					text-decoration: none
+					text-transform: uppercase
+					&:hover,
+					&:focus				 
+						background: #ccc
+
+.hero 
+	background: url("https://scontent-waw1-1.cdninstagram.com/t51.2885-15/e35/13181427_981600618613786_2146949558_n.jpg")
+	background-size: cover
+	background-repeat: no-repeat
+	background-position: center
+	position: relative
+	height: 100vh
+
+.slogan 
+	color: black
+	padding: 60px
+	text-align: right
+	font-size: 60px
+	background-color: rgba(0,0,0, 0.5)
+	position: absolute
+	top: 50%
+	transform: translateY(-50%)
+
+section > .container 
+	margin: 50px
+
+section.container
+	@extend .page-width
+	margin: 0 auto
+
+.container 
+	.row 
+		.fa
+			width: 100px
+			height: 100px
+			background: $white
+			border: 0
+			border-radius: 50%
+			margin: 20px
+			font-size: 50px
+			line-height: 50px
+			text-align: center
+
+h4 
+	font-size: 20px
+	text-align: center
+	line-height: 100%
+
+.container p 
+	font-size: 14px
+	line-height: 100%
+	opacity: 0.8
+
+[class*="col-"] 
+	float: left
+	min-height: 1px
+	padding: 15px
+
+.stats,
+.promo,
+.inline,
+.headline 
+	width: 1200px
+
+h1 
+	@extend .font-style
+
+.headline 
+	text-align: center
+
+	p 
+		font-size: 18px
+		line-height: 100%
+		opacity: 0.5
+
+.gallery 
+	box-sizing: border-box
+
+	[class*="col-"] 
+		padding: 0
+		position: relative
+
+	img 
+		width: 100%
+		display: block
+		height: 300px
+		object-fit: cover
+
+@media (min-width: 1200px) 
+	img
+		&:hover,
+		&:focus
+			cursor: pointer
+
+.row
+	.layer 
+		position: absolute
+		background: rgba(0,0,0, 0.5)
+		width: 100%
+		height: 100%
+		visibility: hidden
+		text-align: center
+		line-height: 100px
+
+		.fa 
+			@extend .fa-style
+			background: rgba(0,0,0, 0.5)
+			border: 0
+			border-radius: 50%
+			margin: 15px
+			font-size: 15px
+			color: $white
+			line-height: 30px
+
+.gallery [class*="col-"]
+	&:hover,
+		.layer 
+			visibility: visible
+
+.inline 
+	text-align: center
+
+	.row 
+		.col-3 
+			img 
+				margin: 15px
+				width: 50%
+				text-align: center
+				border-radius: 50%
+
+			p 
+				@extend .font-style
+				font-weight: bold
+	
+.col-1 
+	text-align: center
+
+.col-4 
+	img 
+		width: 100%
+
+	p
+		@extend .font-style
+		font-weight: bold
+
+.col-8 
+	p
+		font-size: 16px
+		line-height: 100%
+		color: $black
+		opacity: 1
+
+.stats 
+	.col-3
+		@extend .font-style
+		font-weight: bold
+		
+
+		h2
+			font-size: 50px
+
+		p 
+			color: $blue
+			font-size: 18px
+
+=scale($value)
+	-webkit-transform: scale($value)
+	-ms-transform: scale($value)
+	
+footer 
+	margin: 0 auto
+	text-align: center
+	@extend .page-width
+	padding: 50px
+	
+	
+	h5 
+		font-weight: bold
+	
+	.row 
+	
+		.fa
+			@extend .fa-style
+	
+		h6 
+			@extend .margin-general
+			width: 30%
+			float: none
+			text-align: center
+			white-space: nowrap
+	
+	.col-4 
+		.row 
+			.row.phone 
+				.col-6 
+					overflow: hidden
+					
+	.icon-btn
+		@extend .margin-general
+		background: $white
+		border: 0
+		border-radius: 50%
+		cursor: pointer
+		font-size: 30px
+		line-height: 30px
+		&:hover,
+		&:focus
+			+scale(1.1)
+			
+.twitter 
+	@extend .hover-style
+	color: $light-blue
+	background: $light-blue
+	
+.facebook 
+	@extend .hover-style
+	color: $grey-blue
+	background: $grey-blue
+
+.google-plus 
+	@extend .hover-style
+	color: $red-orange
+	background: $red-orange	
+
+.instagram 
+	@extend .hover-style
+	color: $brown-red
+	background: $brown-red
+		
+.github 
+	@extend .hover-style
+	color: $shade-blue
+	background: $shade-blue
+		
+h3 
+	background-color: $darker-shade
+	color: $white
+		
+@media (max-width: 767px) 
+		
+	.margin-m-general
+		margin: 0 auto
+		padding: 0
+	
+	.media-width
+		max-width: 767px
+		width: 100%
+	
+	@for $i from 1 through 12
+		.col-m-#{$i}
+			width: 100%/ 12*$i	
+	
+	.container 
+		@extend .media-width
+		margin: 0 auto
+		
+	header 
+		height: auto
+		text-align: center
+		
+		nav ul 
+			@extend .margin-m-general
+			@extend .media-width
+			float: none
+	
+			li 
+				display: block
+				text-align: center
+	
+	.hero 
+		background: url("https://scontent-waw1-1.cdninstagram.com/t51.2885-15/e35/13181427_981600618613786_2146949558_n.jpg") 
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: center
+		position: relative
+	
+	.container 
+		.row 
+			.fa
+				text-align: center
+				width: 100%
+
+	[class*="col-"]
+		float: none
+
+	.stats,
+	.promo,
+	.inline,
+	.headline 
+		@extend .media-width
+	h1 
+		text-transform: uppercase
+		text-align: center
+
+	.headline 
+		text-align: center
+
+	.gallery [class*="col-"] 
+		padding: 0
+		position: relative
+
+		img 
+			width: 100%
+			display: block
+			height: 300px
+			object-fit: cover
+
+	.layer 
+		position: absolute
+		background: transparent
+		width: 100%
+		height: 100%
+		visibility: visible
+		text-align: center
+		line-height: 30px
+
+	.col-m-1 
+		text-align: center
+
+	.col-m-4 
+		img 
+			width: 100%
+
+		p
+			text-align: center
+
+	footer 
+		@extend .margin-m-general
+		@extend .media-width
+		.row
+			
+			h6 
+				@extend .margin-m-general
+				float: none
+				text-align: center
+
+		h5 
+			font-weight: bold
