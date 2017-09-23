@@ -16,17 +16,6 @@ module.exports = function(grunt) {
       }
     },
 
-	imagemin: {
-		dynamic: {
-			files: [{
-				expand: true,
-				cwd: 'images/',
-				src: ['**/*.{png,jpg,gif}'],
-				dest: 'images/build/'
-        	}]
-    	}
-  	},
-
   	watch: {
   		scripts: {
   			files: ['sass/*.sass'],
@@ -39,7 +28,6 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-imagemin');
-  grunt.registerTask('default', ['sass'] ['jshint']);
+  grunt.registerTask('default', ['sass', 'jshint']);
 
 };
